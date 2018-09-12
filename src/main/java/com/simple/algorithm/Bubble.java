@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Create By S I M P L E On 2018/09/12 15:18:11
  */
 public class Bubble {
-
+    // 冒泡排序
     public static void main(String[] args) {
         int[] a = {3, 6, 1, 4, 5, 3, 6, 7, 212, 23, 41, 3};
         bubbleSort(a);
