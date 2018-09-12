@@ -5,9 +5,8 @@ import java.util.Arrays;
 /**
  * Create By S I M P L E On 2018/09/12 14:04:37
  */
-// 直接插入排序
 public class Insertion {
-
+    // 直接插入排序
     public static void main(String[] args) {
         int[] a = {3, 1, 4, 5, 3, 6, 7, 212, 23, 41, 3};
         insertionSort(a);
