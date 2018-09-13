@@ -15,8 +15,10 @@ public class Selection {
     private static void selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int min = i;
-            // 找到最小值的【位置】
+            // 找到最小值的下标
             for (int j = i + 1; j < array.length; j++) {
+                // 与数组剩下的值进行比较
+                // 剩下的值 = 数组长度-当前数组的下标
                 if (array[j] < array[min]) {
                     min = j;
                 }
