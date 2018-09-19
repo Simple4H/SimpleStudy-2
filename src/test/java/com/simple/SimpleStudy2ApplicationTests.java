@@ -11,6 +11,9 @@ public class SimpleStudy2ApplicationTests {
 
     @Test
     public void contextLoads() {
+        String a1 = "abc";
+        String a2 = new String("abc");
+        System.out.println(a1 == a2);
     }
 
 }
