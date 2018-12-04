@@ -18,11 +18,16 @@ import java.util.UUID;
 /**
  * Create By S I M P L E On 2018/12/04 14:35:17
  */
+@SuppressWarnings("ResultOfMethodCallIgnored")
 @Controller
 public class UserController {
 
+    private final IUserService iUserService;
+
     @Autowired
-    private IUserService iUserService;
+    public UserController(IUserService iUserService) {
+        this.iUserService = iUserService;
+    }
 
     @RequestMapping(value = "/register")
     public String index() {
