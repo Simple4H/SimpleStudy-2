@@ -3,7 +3,6 @@ package com.simple.controller;
 import com.simple.common.ServerResponse;
 import com.simple.pojo.User;
 import com.simple.service.IUserService;
-import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,6 +67,4 @@ public class UserController {
         }
         return "info";
     }
-
-
 }

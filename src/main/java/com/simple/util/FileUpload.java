@@ -18,7 +18,6 @@ public class FileUpload {
         try {
             is = new FileInputStream(filePic);
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return is;
