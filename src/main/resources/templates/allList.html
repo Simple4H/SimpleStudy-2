@@ -5,11 +5,26 @@
     <title>AllList</title>
 </head>
 <body>
-<div>
-    <div th:each="userList:${userList}">
-        <div th:text="${userList.username}"></div>
-        <img th:src="@{${userList.detail}}"/>
-    </div>
-</div>
+<!--<div>-->
+    <!--<div th:each="userList:${userList}">-->
+        <!--<div th:text="${userList.username}" ></div>-->
+        <!--<img th:src="@{${userList.detail}}"/>-->
+    <!--</div>-->
+<!--</div>-->
+
+<ol>
+    <li>List循环：
+        <table border="1">
+            <tr>
+                <th>用户名</th>
+                <th>图片</th>
+            </tr>
+            <tr th:each="userList:${userList}">
+                <td th:text="${userList.username}">username</td>
+                <td><img th:src="@{${userList.detail}}" height="100" width="100" alt="image"/></td>
+            </tr>
+        </table>
+    </li>
+</ol>
 </body>
 </html>

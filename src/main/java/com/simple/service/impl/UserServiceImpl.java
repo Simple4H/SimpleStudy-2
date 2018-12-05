@@ -17,8 +17,12 @@ import java.util.List;
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
 
+    private final UserMapper userMapper;
+
     @Autowired
-    private UserMapper userMapper;
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 
     public ServerResponse register(User user) {
         int result = userMapper.insert(user);
@@ -39,7 +43,7 @@ public class UserServiceImpl implements IUserService {
     public ServerResponse<PageInfo> getAllUser(int pageNum,int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<User> userList = userMapper.getAllList();
-        PageInfo pageInfo = new PageInfo(userList);
+        PageInfo<User> pageInfo = new PageInfo<>(userList);
         return ServerResponse.createBySuccess("success",pageInfo);
     }
 }
