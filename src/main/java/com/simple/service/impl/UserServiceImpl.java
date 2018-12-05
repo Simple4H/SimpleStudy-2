@@ -1,11 +1,15 @@
 package com.simple.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.simple.common.ServerResponse;
 import com.simple.dao.UserMapper;
 import com.simple.pojo.User;
 import com.simple.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Create By S I M P L E On 2018/12/04 14:35:54
@@ -30,5 +34,12 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createBySuccess("success",user);
         }
         return ServerResponse.createByErrorMessage("fail");
+    }
+
+    public ServerResponse<PageInfo> getAllUser(int pageNum,int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> userList = userMapper.getAllList();
+        PageInfo pageInfo = new PageInfo(userList);
+        return ServerResponse.createBySuccess("success",pageInfo);
     }
 }

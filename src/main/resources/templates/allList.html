@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>AllList</title>
+</head>
+<body>
+<div>
+    <div th:each="userList:${userList}">
+        <div th:text="${userList.username}"></div>
+        <img th:src="@{${userList.detail}}"/>
+    </div>
+</div>
+</body>
+</html>

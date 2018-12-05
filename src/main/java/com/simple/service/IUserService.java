@@ -1,5 +1,6 @@
 package com.simple.service;
 
+import com.github.pagehelper.PageInfo;
 import com.simple.common.ServerResponse;
 import com.simple.pojo.User;
 
@@ -11,4 +12,6 @@ public interface IUserService {
     ServerResponse register(User user);
 
     ServerResponse<User> info(Integer id);
+
+    ServerResponse<PageInfo> getAllUser(int pageNum, int pageSize);
 }
